@@ -1,0 +1,91 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #4D8BC8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    min-width: 400px;
+    min-height: 500px;
+    background-color: #EBF5FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .in-div {
+    width: 90%;
+}
+
+.container .in-div .in-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .in-div .in-container .screen-div {
+    width: 100%;
+    min-height: 80px;
+    background-color: #CBE5FE;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .in-div .in-container .screen-div .in-div {
+    width: 90%;
+}
+
+.container .in-div .in-container .screen-div .in-div .input-label{
+    color: #779BBB;
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.container .in-div .in-container .screen-div .in-div .result-label{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.container .in-div .in-container .buttons-div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.container .in-div .in-container .buttons-div button {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #A3D0F9;
+    color: #4779AC;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.container .in-div .in-container .buttons-div button.equal {
+    grid-column: span 2;
+    background-color: #4D8BC8;
+    color: #ffffff;
+}
+
+.container .in-div .in-container .buttons-div button.num {
+    background-color: #CBE5FE;
+    color: #000000;
+}
