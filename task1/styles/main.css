@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    min-width: 400px;
+    width: 400px;
     min-height: 500px;
     background-color: #EBF5FF;
     border-radius: 10px;
@@ -45,21 +45,28 @@ body {
 
 .container .in-div .in-container .screen-div .in-div {
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.container .in-div .in-container .screen-div .in-div .input-label{
+.container .in-div .in-container .screen-div .in-div #input-display{
+    width: 100%;
     color: #779BBB;
     font-weight: 600;
-    padding-top: 10px;
     font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.container .in-div .in-container .screen-div .in-div .result-label{
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    font-size: 30px;
+.container .in-div .in-container .screen-div .in-div #result-display{
+    width: 100%;
+    font-size: 35px;
     font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: end;
 }
 
 .container .in-div .in-container .buttons-div {

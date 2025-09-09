@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator with basic mathematical functionalities using CSS, HTML, and JavaScript.</title>
-        <script src="./js/main.js" type="text/application"></script>
+        <script src="./js/main.js" type="application/javascript" defer></script>
         <link rel="stylesheet" href="./styles/main.css">
     </head>
     <body>
@@ -13,40 +13,40 @@
                 <div class="in-container">
                     <div class="screen-div">
                         <div class="in-div">
-                            <div class="input-label">12+1-1</div>
-                            <div class="result-label">0</div>
+                            <div id="input-display"></div>
+                            <div id="result-display">0</div>
                         </div>
                     </div>
 
                     <div class="buttons-div">
-                        <button>(</button>
-                        <button>)</button>
-                        <button>ans</button>
-                        <button>del</button>
-                        <button>clear</button>
-                   
-                        <button class="num">7</button>
-                        <button class="num">8</button>
-                        <button class="num">9</button>
-                        <button>%</button>
+                        <button onclick="appendOperator('(')">(</button>
+                        <button onclick="appendOperator(')')">)</button>
+                        <button onclick="calculate()">ans</button>
+                        <button onclick="deleteLast()">del</button>
+                        <button onclick="clearDisplay()">clear</button>
+
+                        <button class="num" onclick="appendNumber('7')">7</button>
+                        <button class="num" onclick="appendNumber('8')">8</button>
+                        <button class="num" onclick="appendNumber('9')">9</button>
+                        <button onclick="appendOperator('%')">%</button>
                         <button>&#8730</button>
-              
-                        <button class="num">4</button>
-                        <button class="num">5</button>
-                        <button class="num">6</button>
-                        <button>X</button>
-                        <button>/</button>
-                   
-                        <button class="num">1</button>
-                        <button class="num">2</button>
-                        <button class="num">3</button>
-                        <button>+</button>
-                        <button>-</button>
-                   
-                        <button>.</button>
-                        <button class="num">0</button>
+
+                        <button class="num" onclick="appendNumber('4')">4</button>
+                        <button class="num" onclick="appendNumber('5')">5</button>
+                        <button class="num" onclick="appendNumber('6')">6</button>
+                        <button onclick="appendOperator('*')">X</button>
+                        <button onclick="appendOperator('/')">/</button>
+
+                        <button class="num" onclick="appendNumber('1')">1</button>
+                        <button class="num" onclick="appendNumber('2')">2</button>
+                        <button class="num" onclick="appendNumber('3')">3</button>
+                        <button onclick="appendOperator('+')">+</button>
+                        <button onclick="appendOperator('-')">-</button>
+
+                        <button onclick="appendNumber('.')">.</button>
+                        <button class="num" onclick="appendNumber('0')">0</button>
                         <button>&#177</button>
-                        <button class="equal">ENTER</button>
+                        <button class="equal" onclick="calculate()">ENTER</button>
                     </div>
                 </div>
             </div>
