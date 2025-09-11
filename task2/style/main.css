@@ -1,0 +1,130 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    min-height: 70px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+header .in-div {
+    width: 85%;
+}
+
+header .in-div .logo {
+    font-weight: 600;
+}
+
+/* header section end */
+
+.slide-section {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 70px);
+    top: 70px;
+    background-image: url(../all-images/bg/slide-bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-section .slide-in {
+    width: 85%;
+}
+
+.slide-section .slide-in .container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+@media all and (max-width: 1042px) {
+    .slide-section .slide-in .container {
+        flex-direction: column;
+    }
+}
+
+.slide-section .slide-in .container .text-content {
+    width: 500px;
+    flex-grow: 1;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media all and (max-width: 1042px) {
+    .slide-section .slide-in .container .text-content {
+        width: 100%;
+        order: 2;
+    }
+}
+
+.slide-section .slide-in .container .text-content h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.slide-section .slide-in .container .text-content p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.slide-section .slide-in .container .text-content h1 span {
+    color: #07418D;
+}
+
+.slide-section .slide-in .container .text-content .btn-container {
+    display: flex;
+    gap: 15px;
+}
+
+@media all and (max-width: 1042px) {
+    .slide-section .slide-in .container .text-content .btn-container {
+        flex-direction: column;
+    }
+}
+
+.slide-section .slide-in .container .text-content .btn-container button {
+    padding: 15px 80px;
+    background-color: #07418D;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.slide-section .slide-in .container .image-div {
+    width: 600px;
+}
+
+@media all and (max-width: 1042px) {
+    .slide-section .slide-in .container .image-div {
+        width: 100%;
+        order: 1;
+    }
+}
+
+.slide-section .slide-in .container .image-div img {
+    width: 100%;
+    object-fit: cover;
+}
