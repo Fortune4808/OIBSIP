@@ -24,6 +24,10 @@ header {
 
 header .in-div {
     width: 85%;
+    max-width: 1200px;
+    display: flex;
+    text-align: center;
+    gap: 15px;
 }
 
 header .in-div .logo {
@@ -33,23 +37,33 @@ header .in-div .logo {
 /* header section end */
 
 .slide-section {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: calc(100% - 70px);
     top: 70px;
-    background-image: url(../all-images/bg/slide-bg.jpg);
+    background: url(../all-images/bg/slide-bg.jpg) no-repeat center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+
+@media all and (max-width: 1042px) {
+    .slide-section {
+        padding: 80px 0px;
+    }
 }
 
 .slide-section .slide-in {
     width: 85%;
+    max-width: 1200px;
 }
 
 .slide-section .slide-in .container {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -103,7 +117,7 @@ header .in-div .logo {
 }
 
 .slide-section .slide-in .container .text-content .btn-container button {
-    padding: 15px 80px;
+    padding: 15px 50px;
     background-color: #07418D;
     color: #ffffff;
     font-weight: 700;
@@ -115,6 +129,8 @@ header .in-div .logo {
 
 .slide-section .slide-in .container .image-div {
     width: 600px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 @media all and (max-width: 1042px) {
@@ -127,4 +143,5 @@ header .in-div .logo {
 .slide-section .slide-in .container .image-div img {
     width: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
