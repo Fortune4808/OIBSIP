@@ -1,0 +1,195 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+:root {
+    --primary-color: #191970;
+    --secondary-color: #00AFEF;
+    --text-color: #444;
+}
+
+.bg {
+    width: calc(100% - 650px);
+    overflow: hidden;
+}
+
+.bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.right-div {
+    width: 650px;
+    background: url(../../public/all-images/bg/slide-bg.jpg) no-repeat center center;
+}
+
+.right-div header {
+    width: 100%;
+    min-height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.right-div header .in-div {
+    width: 90%;
+    border-bottom: rgba(215, 215, 215, .6) 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.right-div header .in-div .logo {
+    width: 40px;
+}
+
+.right-div header .in-div .logo img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.right-div header .in-div a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.right-div .body-form {
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.right-div .body-form .in-div {
+    width: 70%;
+    max-width: 1200px;
+    padding: 50px 0px;
+}
+
+.right-div .body-form .in-div h1,
+h2 {
+    padding: 0px;
+    margin: 0px;
+    color: var(--primary-color);
+    font-weight: 700;
+    white-space: nowrap;
+    font-size: 2.7vw;
+}
+
+.right-div .body-form .in-div p {
+    padding: 10px;
+    background-color: #F2FDF9;
+    border: 1px solid #BCDBCB;
+    color: #A1A2A6;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.right-div .body-form .in-div .form-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-div .body-form .in-div .form-div .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.right-div .body-form .in-div .form-div .form label {
+    padding-left: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.right-div .body-form .in-div .form-div .form .text-field {
+    padding: 18px 20px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.right-div .body-form .in-div .form-div .form select {
+  appearance: none; 
+}
+
+.right-div .body-form .in-div .form-div .form .text-field:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.right-div .body-form .in-div .form-div .action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: rgba(215, 215, 215, .6) 1px solid;
+    padding-bottom: 20px;
+}
+
+.right-div .body-form .in-div .form-div .action button {
+    border: none;
+    padding: 15px 35px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.right-div .body-form .in-div .form-div .action button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.right-div .body-form .in-div .form-div .action .forget-pass {
+    font-size: 15px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.right-div .body-form .in-div .form-div .action .forget-pass:hover {
+    text-decoration: underline;
+}
+
+.right-div .body-form .in-div .form-div .signup-div {
+    text-align: center;
+    font-size: 15px;
+}
+
+.right-div .body-form .in-div .form-div .signup-div span {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.right-div .body-form .in-div .form-div .signup-div span:hover {
+    text-decoration: underline;
+}
+
+#reset-password,
+#signup {
+    display: none;
+}

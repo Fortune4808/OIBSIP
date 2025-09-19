@@ -39,20 +39,14 @@ header .in-div .logo {
 .slide-section {
     position: relative;
     width: 100%;
-    height: calc(100% - 70px);
-    top: 70px;
+    min-height: calc(100% - 75px);
+    padding-top: 75px;
     background: url(../all-images/bg/slide-bg.jpg) no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
 
-@media all and (max-width: 1042px) {
-    .slide-section {
-        padding: 80px 0px;
-    }
 }
 
 .slide-section .slide-in {
@@ -113,6 +107,7 @@ header .in-div .logo {
 @media all and (max-width: 1042px) {
     .slide-section .slide-in .container .text-content .btn-container {
         flex-direction: column;
+        padding-bottom: 10px;
     }
 }
 

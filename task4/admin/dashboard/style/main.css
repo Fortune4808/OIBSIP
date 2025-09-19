@@ -1,0 +1,342 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(../../../public/all-images/bg/slide-bg.jpg) no-repeat center center;
+}
+
+:root {
+    --primary-color: #191970;
+    --secondary-color: #007BFF;
+    --text-color: #444;
+    --active-color: #28a745;
+    --inactive-color: #dc3545;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    min-height: 70px;
+    background: rgba(255, 255, 255, 0.48);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+header .in-div {
+    width: 98%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .in-div .logo {
+    width: 60px;
+}
+
+header .in-div .logo img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+header .in-div .container {
+    flex-grow: 1;
+}
+
+header .in-div .container .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .in-div .container .nav-container nav ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+header .in-div .container .nav-container nav ul li {
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+header .in-div .container .nav-container nav ul li i {
+    color: var(--secondary-color);
+}
+
+header .in-div .container .nav-container nav ul li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+header .in-div .container .nav-container .right-div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media all and (max-width: 640px) {
+    header .in-div .container .nav-container .icons, .profile, .profile-pix {
+        display: none;
+    }
+}
+
+header .in-div .container .nav-container .right-div .icons .bi {
+    padding: 10px;
+    font-size: 20px;
+}
+
+header .in-div .container .nav-container .right-div .icons .bi:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+header .in-div .container .nav-container .right-div .icons .bi-bell {
+    position: relative;
+}
+
+header .in-div .container .nav-container .right-div .icons #count {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    padding: 0px 5px;
+    background-color: #be1d1d;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+header .in-div .container .nav-container .right-div .profile {
+    border-left: 1px #444 dotted;
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+header .in-div .container .nav-container .right-div .profile #status-name {
+    color: var(--secondary-color);
+}
+
+header .in-div .container .nav-container .right-div .profile-pix {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+header .in-div .container .nav-container .right-div .profile-pix img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%
+}
+
+header .in-div .container .nav-container .right-div .mobile-nav {
+    padding: 10px;
+    font-size: 25px;
+    display: none;
+}
+
+@media all and (max-width: 640px) {
+    header .in-div .container .nav-container .right-div .mobile-nav {
+        display: block;
+    }
+}
+
+header .in-div .container .nav-container .right-div .mobile-nav:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    color: #444;
+    cursor: pointer;
+}
+
+.side-nav {
+    position: fixed;
+    top: 70px;
+    width: 100px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.48);
+    display: flex;
+    justify-content: center;
+}
+
+@media all and (max-width: 640px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+.side-nav ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+}
+
+.side-nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--text-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.side-nav ul .bi {
+    font-size: 15px;
+}
+
+.side-nav ul li:hover {
+    background-color: #F9F7F0;
+    color: var(--secondary-color);
+    border-radius: 5px;
+    border-left: 2px solid var(--primary-color);
+    cursor: pointer;
+}
+
+
+
+
+
+.body-div {
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+
+@media all and (max-width: 640px) {
+    .body-div {
+        width: 100%;
+        left: 0px;
+    }
+}
+
+.body-div .in-div {
+    width: 98%;
+    padding: 10px;
+}
+
+.body-div .in-div .body-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.body-div .in-div .body-container .top-div {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.body-div .in-div .body-container .top-div .statistics {
+    width: 300px;
+    min-height: 130px;
+    background-color: #FBF9F4;
+    border: 1px solid #E5E4E4;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.body-div .in-div .body-container .top-div .profile {
+    flex-grow: 4;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in {
+    width: 90%;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color);
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .profile .profile-pix {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .profile .profile-pix img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .profile #fullname {
+    color: var(--secondary-color);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .statistics-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .statistics-count .title {
+    font-weight: 700;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .statistics-count .bottom-title {
+    font-style: italic;
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .statistics-count #count {
+    font-size: 30px;
+    color: var(--secondary-color);
+}
+
+.body-div .in-div .body-container .top-div .statistics .div-in .statistics-count .icon {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+}
+
+.body-div .in-div .body-container .bottom-div {
+    width: 100%;
+    min-height: 100px;
+}
