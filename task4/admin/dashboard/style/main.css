@@ -95,7 +95,10 @@ header .in-div .container .nav-container .right-div {
 }
 
 @media all and (max-width: 640px) {
-    header .in-div .container .nav-container .icons, .profile, .profile-pix {
+
+    header .in-div .container .nav-container .icons,
+    .profile,
+    .profile-pix {
         display: none;
     }
 }
@@ -249,10 +252,10 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 }
 
 .body-div .in-div .body-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-bottom: 20px;
+    gap: 10px;
 }
 
 .body-div .in-div .body-container .top-div {
@@ -264,8 +267,8 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 .body-div .in-div .body-container .top-div .statistics {
     width: 300px;
     min-height: 130px;
-    background-color: #FBF9F4;
-    border: 1px solid #E5E4E4;
+    background-image: linear-gradient(to right, #FDFDFB, #F7F4EC);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
@@ -338,5 +341,138 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 
 .body-div .in-div .body-container .bottom-div {
     width: 100%;
-    min-height: 100px;
+    height: calc(100% - 70px);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+.body-div .in-div .body-container .bottom-div .left-div {
+    width: 350px;
+    flex-grow: 15;
+}
+
+.body-div .in-div .body-container .bottom-div .right-div {
+    width: 350px;
+    min-height: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.body-div .in-div .body-container .bottom-div .right-div .in-div .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    ;
+    padding-bottom: 8px;
+}
+
+.body-div .in-div .body-container .bottom-div .right-div .in-div .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding-top: 8px;
+}
+
+.body-div .in-div .body-container .bottom-div .right-div .in-div .container .flex-card {
+    width: 300px;
+    height: 115px;
+    background-color: #ffffff;
+    border: 1px dotted #E5E4E4;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+
+
+.profile-card {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    right: 0px;
+    background-color: #ffffff;
+}
+
+.profile-card .header {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-card .header .in-div {
+    width: 98%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-card .header .in-div .close {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card .header .in-div .close:hover {
+    background-color: var(--inactive-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile-card .body-form {
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card .body-form .div-in {
+    width: 90%;
+}
+
+
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 500;
+    display: none;
+}
+
+
+.ajax-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 18px;
+    color: #bdc3c7;
+}
+
+.ajax-loader span {
+    color: #FFF;
+    cursor: pointer;
 }

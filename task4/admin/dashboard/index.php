@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div id="overlay"></div>
     <header class="fadeInDown animated">
         <div class="in-div">
             <div class="logo">
@@ -19,8 +20,8 @@
                 <div class="nav-container">
                     <nav>
                         <ul>
-                            <li title="Dashboard"><i class="bi bi-speedometer2"></i> Dashboard</li>
-                            <li title="My Profile"><i class="bi bi-person-circle"></i> My Profile</li>
+                            <li title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
+                            <li title="My Profile" onclick="getForm('profile')"><i class="bi bi-person-circle"></i> My Profile</li>
                         </ul>
                     </nav>
 
@@ -48,59 +49,18 @@
         </div>
     </header>
 
-    <div class="side-nav">
+    <div class="side-nav fadeInLeft animated">
         <ul>
-            <li title="Dashboard"><i class="bi bi-speedometer2"></i> Dashboard</li>
+            <li title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
             <li title="log-out"><i class="bi bi-power"></i> Log-Out</li>
         </ul>
     </div>
 
     <div class="body-div">
         <div class="in-div">
-            <div class="body-container">
-                <div class="top-div">
-                    <div class="statistics profile">
-                        <div class="div-in">
-                            <div class="profile">
-                                <div class="profile-pix" title="Profile Pix">
-                                    <img src="../../public/all-images/logo-pix/avatar.jpg" alt="">
-                                </div>
-                                <div>
-                                    <div><i class="bi bi-speedometer2"></i> Administrative Dashboard</div>
-                                    <div id="fullname">Fortune Tech Global</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="statistics">
-                        <div class="div-in">
-                            <div class="statistics-count">
-                                <div>
-                                    <div class="title">Administrators</div>
-                                    <div class="bottom-title">Statistics of Administrators</div>
-                                    <div id="count">0</div>
-                                </div>
-                                <div class="icon"><i class="bi bi-people-fill"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="statistics">
-                        <div class="div-in">
-                            <div class="statistics-count">
-                                <div>
-                                    <div class="title">Administrators</div>
-                                    <div class="bottom-title">Statistics of Administrators</div>
-                                    <div id="count">0</div>
-                                </div>
-                                <div class="icon"><i class="bi bi-people-fill"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bottom-div">
-
-                </div>
+            <div class="body-container" id="main-dashboard">
+                <?php $page="dashboard";?>
+			    <?php include 'config/content-pages.php';?>
             </div>
         </div>
     </div>
