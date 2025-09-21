@@ -31,12 +31,12 @@
                             <i class="bi bi-bell" title="System Notification"><span id="count">3</span></i>
                         </div>
 
-                        <div class="profile">
+                        <div class="profile-header">
                             <div id="profile-name">Fortune Tech Global</div>
                             <div id="status-name">Active</div>
                         </div>
 
-                        <div class="profile-pix" title="Profile Pix">
+                        <div class="profile-pix-header" title="Profile Pix">
                             <img src="../../public/all-images/logo-pix/avatar.jpg" alt="">
                         </div>
 

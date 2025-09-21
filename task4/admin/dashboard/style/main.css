@@ -15,7 +15,7 @@ body {
     --primary-color: #191970;
     --secondary-color: #007BFF;
     --text-color: #444;
-    --active-color: #28a745;
+    --active-color: #016630;
     --inactive-color: #dc3545;
 }
 
@@ -97,8 +97,8 @@ header .in-div .container .nav-container .right-div {
 @media all and (max-width: 640px) {
 
     header .in-div .container .nav-container .icons,
-    .profile,
-    .profile-pix {
+    .profile-header,
+    .profile-pix-header {
         display: none;
     }
 }
@@ -131,7 +131,7 @@ header .in-div .container .nav-container .right-div .icons #count {
     font-weight: 600;
 }
 
-header .in-div .container .nav-container .right-div .profile {
+header .in-div .container .nav-container .right-div .profile-header {
     border-left: 1px #444 dotted;
     padding-left: 15px;
     font-size: 14px;
@@ -139,17 +139,17 @@ header .in-div .container .nav-container .right-div .profile {
     color: var(--text-color);
 }
 
-header .in-div .container .nav-container .right-div .profile #status-name {
+header .in-div .container .nav-container .right-div .profile-header #status-name {
     color: var(--secondary-color);
 }
 
-header .in-div .container .nav-container .right-div .profile-pix {
+header .in-div .container .nav-container .right-div .profile-pix-header {
     width: 35px;
     height: 35px;
     border-radius: 50%;
 }
 
-header .in-div .container .nav-container .right-div .profile-pix img {
+header .in-div .container .nav-container .right-div .profile-pix-header img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -401,19 +401,23 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     background-color: #ffffff;
 }
 
+@media all and (max-width: 500px) {
+    .profile-card {
+        width: 100%;
+    }
+}
+
 .profile-card .header {
     width: 100%;
-    min-height: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .profile-card .header .in-div {
-    width: 98%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 5px;
+    width: 95%;
     display: flex;
     justify-content: space-between;
 }
@@ -446,6 +450,75 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 .profile-card .body-form .div-in {
     width: 90%;
 }
+
+.profile-card .body-form .div-in .profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 20px;
+}
+
+.profile-card .body-form .div-in .profile .profile-pix {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.profile-card .body-form .div-in .profile .profile-pix img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.profile-card .body-form .div-in .border {
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 10px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-size: 12px;
+}
+
+.profile-card .body-form .div-in .form-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 15px;
+}
+
+.profile-card .body-form .div-in .form-container .form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.profile-card .body-form .div-in .form-container .form label {
+    padding-left: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.profile-card .body-form .div-in .form-container .form .text-field {
+    padding: 18px 20px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.profile-card .body-form .div-in .form-container .form select {
+  appearance: none; 
+}
+
+.profile-card .body-form .div-in .form-container .form .text-field:focus {
+    border: 1px solid var(--primary-color);
+}
+
 
 
 

@@ -111,7 +111,6 @@ h2 {
 .right-div .body-form .in-div .form-div .form {
     width: 100%;
     display: flex;
-    flex-direction: column;
     gap: 5px;
 }
 
