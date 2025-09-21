@@ -477,6 +477,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     font-weight: 700;
     color: var(--secondary-color);
     font-size: 12px;
+    margin-top: 15px;
 }
 
 .profile-card .body-form .div-in .form-container {
@@ -493,6 +494,10 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     flex-direction: column;
     gap: 5px;
     flex-grow: 1;
+}
+
+.profile-card .body-form .div-in .form-container .form i {
+    color: var(--primary-color);
 }
 
 .profile-card .body-form .div-in .form-container .form label {

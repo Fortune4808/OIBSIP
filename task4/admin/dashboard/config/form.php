@@ -21,23 +21,48 @@
                     <div class="border">BASIC INFORMATION</div>
                     <div class="form-container">
                         <div class="form">
-                            <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
-                            <input type="text" class="text-field" placeholder="Enter your Email Address">
+                            <label for="Title"><i class="bi bi-people-fill"></i> Title</label>
+                            <select id="" class="text-field">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="form">
+                            <label for="Email Address"><i class="bi bi-person-circle"></i> First Name</label>
+                            <input type="text" class="text-field" placeholder="Enter your First Name">
+                        </div>
+                        <div class="form">
+                            <label for="Email Address"><i class="bi bi-person-circle"></i> Middle Name</label>
+                            <input type="text" class="text-field" placeholder="Enter your Middle Name">
+                        </div>
+                        <div class="form">
+                            <label for="Email Address"><i class="bi bi-person-circle"></i> Last Name</label>
+                            <input type="text" class="text-field" placeholder="Enter your Last Name">
+                        </div>
+                        <div class="form">
+                            <label for="Home Address"><i class="bi bi-geo-alt-fill"></i> Home Address</label>
+                            <input type="text" class="text-field" placeholder="Enter your Home Address">
+                        </div>
+                    </div>
+                    <div class="border">CONTACT INFORMATION</div>
+                    <div class="form-container">
+                        <div class="form">
+                            <label for="Phone Number"><i class="bi bi-telephone-forward-fill"></i> Phone Number</label>
+                            <input type="text" class="text-field" placeholder="Enter your Phone Number">
                         </div>
                         <div class="form">
                             <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
                             <input type="text" class="text-field" placeholder="Enter your Email Address">
                         </div>
                     </div>
-                    <div class="border">BASIC INFORMATION</div>
+                    <div class="border">ACCOUNT INFORMATION</div>
                     <div class="form-container">
                         <div class="form">
-                            <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
-                            <input type="text" class="text-field" placeholder="Enter your Email Address">
+                            <label for="Registration ID"><i class="bi bi-person-badge-fill"></i> Registration ID</label>
+                            <input type="text" class="text-field" placeholder="" readonly>
                         </div>
                         <div class="form">
-                            <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
-                            <input type="text" class="text-field" placeholder="Enter your Email Address">
+                            <label for="Registration Date"><i class="bi bi-alarm-fill"></i> Registration Date</label>
+                            <input type="text" class="text-field" placeholder="" readonly>
                         </div>
                     </div>
                 </div>

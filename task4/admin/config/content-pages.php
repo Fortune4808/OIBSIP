@@ -17,7 +17,7 @@
                 <button title="Login">Login <i class="bi bi-check"></i></button>
                 <div class="forget-pass" onclick="nextPage('reset-password')">Forgot Password?</div>
             </div>
-            <div class="signup-div">Don't have an account? <span>Sign-Up</span></div>
+            <div class="signup-div">Don't have an account? <span onclick="nextPage('signup')">Sign-Up</span></div>
         </div>
     </div>
 
@@ -45,30 +45,34 @@
 
         <div class="form-div">
             <div class="form">
+                <label for="Title"><i class="bi bi-people-fill"></i> Title</label>
+                <select id="" class="text-field">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="form">
                 <label for="First Name"><i class="bi bi-person-circle"></i> First Name</label>
-                <input type="text" class="text-field" placeholder="Enter your Email Address">
+                <input type="text" class="text-field" placeholder="Enter your First Name">
             </div>
             <div class="form">
-                <label for="Email Address"><i class="bi bi-person-circle"></i> Middle Name</label>
-                <input type="text" class="text-field" placeholder="Enter your Email Address">
+                <label for="Middle Name"><i class="bi bi-person-circle"></i> Middle Name</label>
+                <input type="text" class="text-field" placeholder="Enter your Middle Name">
             </div>
             <div class="form">
-                <label for="Email Address"><i class="bi bi-person-circle"></i> Last Name</label>
-                <input type="text" class="text-field" placeholder="Enter your Email Address">
+                <label for="Last Name"><i class="bi bi-person-circle"></i> Last Name</label>
+                <input type="text" class="text-field" placeholder="Enter your Last Name">
             </div>
             <div class="form">
                 <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
                 <input type="text" class="text-field" placeholder="Enter your Email Address">
             </div>
             <div class="form">
-                <label for="Email Address"><i class="bi bi-telephone-fill"></i> Mobile Number</label>
-                <input type="text" class="text-field" placeholder="Enter your Email Address">
+                <label for="Phone Number"><i class="bi bi-telephone-fill"></i> Phone Number</label>
+                <input type="text" class="text-field" placeholder="Enter your Phone Number">
             </div>
-             <div class="form">
-                <label for="Email Address"><i class="bi bi-envelope-fill"></i> Gender</label>
-                <select id="" class="text-field">
-                    <option value=""></option>
-                </select>
+            <div class="form">
+                <label for="Home Address"><i class="bi bi-geo-alt-fill"></i> Home Address</label>
+                <input type="text" class="text-field" placeholder="Enter your Home Address">
             </div>
 
             <div class="action">
