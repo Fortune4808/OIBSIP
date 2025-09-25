@@ -86,3 +86,30 @@
         </div>
     </div>
 <?php } ?>
+
+<?php if ($page == 'proceed-to-reset-pass') { ?>
+    <div class="fadeIn animated">
+        <h2>Complete Reset Password</h2>
+        <p>Hi, <span id="title"></span> <span id="fullname"></span>, an <span>OTP</span> has been sent to your email address (<span id="email"></span>)</p>
+
+        <div class="form-div">
+            <div class="form">
+                <label for="Enter OTP"><i class="bi bi-shield-lock-fill"></i> Enter OTP</label>
+                <input type="text" class="text-field" placeholder="Enter OTP" id="otp">
+            </div>
+            <div class="form">
+                <label for="Enter New Password"><i class="bi bi-person-fill-lock"></i> Enter New Password</label>
+                <input type="password" class="text-field" placeholder="Enter New Password" id="password">
+            </div>
+            <div class="form">
+                <label for="Enter Confirmed Password"><i class="bi bi-person-fill-lock"></i> Enter Confirmed Password</label>
+                <input type="password" class="text-field" placeholder="Enter Confirmed Password" id="confirmed-password">
+            </div>
+            <div class="signup-div">OTP Not Received Yet? <span id="resend-otp">Resend OTP</span></div>
+
+            <div class="action">
+                <button title="submit" id="finish-reset-pass">Submit <i class="bi bi-check"></i></button>
+            </div>
+        </div>
+    </div>
+<?php } ?>

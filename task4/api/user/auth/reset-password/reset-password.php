@@ -32,6 +32,7 @@ if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
     if (mysqli_num_rows($result) > 0) {
         $success = mysqli_fetch_assoc($result);
         $statusId = $success['statusId'];
+        $userId = $success['userId'];
 
         if ($statusId == 2) {
             $response = [

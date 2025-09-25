@@ -176,12 +176,13 @@ h2 {
 }
 
 .right-div .body-form .in-div .form-div .signup-div {
-    text-align: center;
-    font-size: 15px;
+    /* text-align: center; */
+    font-size: 14px;
 }
 
-.right-div .body-form .in-div .form-div .signup-div span {
-    color: var(--primary-color);
+.right-div .body-form .in-div span {
+    color: var(--secondary-color);
+    font-weight: 600;
     cursor: pointer;
 }
 
