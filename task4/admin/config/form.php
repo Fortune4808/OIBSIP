@@ -1,5 +1,5 @@
 <?php if ($page == 'log-in') { ?>
-    <div class="log-div" id="login">
+    <div class="fadeIn animated">
         <h1>👋 Hi, Welcome Back!</h1>
         <p>Kindly, provide the required information to sign-up on this platform. </p>
 
@@ -15,31 +15,35 @@
 
             <div class="action">
                 <button title="Login">Login <i class="bi bi-check"></i></button>
-                <div class="forget-pass" onclick="nextPage('reset-password')">Forgot Password?</div>
+                <div class="forget-pass" onclick="getPage('reset-password')">Forgot Password?</div>
             </div>
-            <div class="signup-div">Don't have an account? <span onclick="nextPage('signup')">Sign-Up</span></div>
+            <div class="signup-div">Don't have an account? <span onclick="getPage('signup')">Sign-Up</span></div>
         </div>
     </div>
+<?php } ?>
 
-    <div class="log-div" id="reset-password">
+<?php if ($page == 'reset-password') { ?>
+    <div class="fadeIn animated">
         <h2>Reset Password</h2>
         <p>Kindly, provide your <span>Email Address</span> to reset your password </p>
 
         <div class="form-div">
             <div class="form">
                 <label for="Email Address"><i class="bi bi-envelope-fill"></i> Email Address</label>
-                <input type="text" class="text-field" placeholder="Enter your Email Address">
+                <input type="text" class="text-field" placeholder="Enter your Email Address" id="emailAddress">
             </div>
 
             <div class="action">
-                <button title="Proceed">Proceed <i class="bi bi-arrow-right"></i></button>
-                <div class="forget-pass">Forgot Password?</div>
+                <button title="Proceed" onclick="resetPassword();" id="submit-btn">Proceed <i class="bi bi-arrow-right"></i></button>
+                <div>Existing User? <span class="forget-pass" onclick="getPage('log-in')">Login here</span></div>
             </div>
-            <div class="signup-div">Don't have an account? <span onclick="nextPage('signup')">Sign-Up</span></div>
+            <div class="signup-div">Don't have an account? <span onclick="getPage('signup')">Sign-Up</span></div>
         </div>
     </div>
+<?php } ?>
 
-    <div class="log-div" id="signup">
+<?php if ($page == 'signup') { ?>
+    <div class="fadeIn animated">
         <h2>New Registration</h2>
         <p>Kindly, provide the required information to sign-up on this platform.</p>
 
@@ -78,7 +82,7 @@
             <div class="action">
                 <button title="sign up">Sign Up <i class="bi bi-check"></i></button>
             </div>
-            <div class="signup-div">Already have an account? <span onclick="nextPage('login')">Login</span></div>
+            <div class="signup-div">Already have an account? <span onclick="getPage('log-in')">Login</span></div>
         </div>
     </div>
 <?php } ?>

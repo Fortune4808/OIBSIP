@@ -1,5 +1,5 @@
 <?php
-include "../config/connection.php";
+include "../../../config/connection.php";
 
 if ($apiKey != $expectedApiKey) {
     $response = [

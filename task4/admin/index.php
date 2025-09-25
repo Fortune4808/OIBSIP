@@ -28,9 +28,9 @@
         </header>
 
         <div class="body-form">
-            <div class="in-div">
+            <div class="in-div fadeIn animated" id="main">
                 <?php $page = 'log-in'; ?>
-                <?php include "./config/content-pages.php" ?>
+                <?php include "./config/form.php" ?>
             </div>
         </div>
     </div>

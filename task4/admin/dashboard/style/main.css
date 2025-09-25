@@ -523,34 +523,3 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 .profile-card .body-form .div-in .form-container .form .text-field:focus {
     border: 1px solid var(--primary-color);
 }
-
-
-
-
-#overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 500;
-    display: none;
-}
-
-
-.ajax-loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
-    font-size: 18px;
-    color: #bdc3c7;
-}
-
-.ajax-loader span {
-    color: #FFF;
-    cursor: pointer;
-}

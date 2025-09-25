@@ -188,8 +188,3 @@ h2 {
 .right-div .body-form .in-div .form-div .signup-div span:hover {
     text-decoration: underline;
 }
-
-#reset-password,
-#signup {
-    display: none;
-}

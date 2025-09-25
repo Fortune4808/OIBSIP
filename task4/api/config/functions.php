@@ -1,5 +1,27 @@
 <?php
 
+function getAuthorizationHeader()
+{
+    if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+        return trim($_SERVER['HTTP_AUTHORIZATION']);
+    } elseif (function_exists('apache_request_headers')) {
+        $headers = apache_request_headers();
+        if (isset($headers['Authorization'])) {
+            return trim($headers['Authorization']);
+        }
+    }
+    return null;
+}
+
+function getBearerToken()
+{
+    $header = getAuthorizationHeader();
+    if ($header && preg_match('/Bearer\s(\S+)/', $header, $matches)) {
+        return $matches[1];
+    }
+    return null;
+}
+
 function getCustomId($conn, $item)
 {
     $count = mysqli_fetch_array(mysqli_query($conn, "SELECT countValue FROM setup_master_count_tab WHERE countId = '$item' FOR UPDATE"));
@@ -19,16 +41,16 @@ function getCustomId($conn, $item)
 
 function validateAccesskey($conn, $accessKey)
 {
-    $query = mysqli_query($conn, "SELECT a.* FROM staff_tab a WHERE a.accessKey='$accessKey' AND a.status_id=1;") or die(mysqli_error($conn));
+    $query = mysqli_query($conn, "SELECT a.* FROM user_tab a WHERE a.accessKey='$accessKey' AND a.statusId=1;") or die(mysqli_error($conn));
     $count = mysqli_num_rows($query);
     if ($count > 0) {
-        $fetch_query = mysqli_fetch_array($query);
-        $userId = $fetch_query['userId'];
+        $fetchQuery = mysqli_fetch_array($query);
+        $userId = $fetchQuery['userId'];
         $check = 1;
     } else {
         $check = 0;
     }
-    return ([
+    return json_encode([
         ["userId" => $userId, "check" => $check]
     ]);
 }
@@ -50,4 +72,27 @@ function validatePhoneNumber($input)
 {
     $input = trim($input);
     return preg_match("/^[\d\s()+-]+$/", $input); // Allow digits, spaces, parentheses, and dashes
+}
+
+function formatUsers($row)
+{
+    return [
+        "userId" => $row['userId'],
+        "firstName" => $row['firstName'],
+        "middleName" => $row['middleName'],
+        "lastName" => $row['lastName'],
+        "emailAddress" => $row['emailAddress'],
+        "phoneNumber" => $row['phoneNumber'],
+        "homeAddress" => $row['homeAddress'],
+        "status" => [
+            "statusId" => $row['statusId'],
+            "statusName" => $row['statusName']
+        ],
+        "title" => [
+            "titleId" => $row['titleId'],
+            "titleName" => $row['titleName']
+        ],
+        "lastLogin" => $row['lastLogin'],
+        "createdTime" => $row['createdTime']
+    ];
 }

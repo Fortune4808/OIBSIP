@@ -1,5 +1,5 @@
 <?php
-include "../config/connection.php";
+include "../../../config/connection.php";
 
 if ($apiKey != $expectedApiKey) {
     $response = [
@@ -24,18 +24,13 @@ if (empty($emailAddress)) {
 }
 
 if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
-    $query = mysqli_prepare($conn, "SELECT * FROM user_tab WHERE emailAddress = ?");
+    $query = mysqli_prepare($conn, "SELECT a.*, b.*, c.* FROM user_tab a JOIN setup_status_tab b ON a.statusId = b.statusId JOIN setup_title_tab c ON a.titleId = c.titleId WHERE emailAddress = ?");
     mysqli_stmt_bind_param($query, 's', $emailAddress);
     mysqli_stmt_execute($query);
     $result = mysqli_stmt_get_result($query);
 
     if (mysqli_num_rows($result) > 0) {
-        $success = mysqli_fetch_array($result);
-        $userId = $success['userId'];
-        $firstName = $success['firstName'];
-        $middleName = $success['middleName'];
-        $lastName = $success['lastName'];
-        $emailAddress = $success['emailAddress'];
+        $success = mysqli_fetch_assoc($result);
         $statusId = $success['statusId'];
 
         if ($statusId == 2) {
@@ -59,11 +54,7 @@ if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
                 'response' => 200,
                 'success' => true,
                 'message' => "SUCCESS! An OTP has been sent to your Email Address",
-                'userId' => $userId,
-                'firstName' => $firstName,
-                'middleName' => $middleName,
-                'lastName' => $lastName,
-                'emailAddress' => $emailAddress
+                'data' => formatUsers($success),
             ];
         }
     } else {
