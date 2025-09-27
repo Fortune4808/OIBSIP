@@ -14,7 +14,7 @@
                     </div>
                     <div>
                         <strong id="profile-fullname" style="font-size: 30px; white-space: nowrap;"></strong>
-                        <div style="display: flex; gap:5px; color:#333; align-items:center;"><span id="status"></span><span style="font-size: 10px;"> | LAST LOGIN DATE:</span><span id="lastLogin" style="font-style: italic; font-weight:600; font-size:10px"></span></div>
+                        <div style="display: flex; gap:5px; color:#333; align-items:center;"><span id="status"></span><span style="font-size: 10px; padding-top:3px"> | LAST LOGIN DATE:</span><span id="lastLogin" style="font-style: italic; font-weight:600; font-size:10px; padding-top:3px"></span></div>
                     </div>
                 </div>
                 <div style="padding-top: 20px; padding-bottom:20px;">

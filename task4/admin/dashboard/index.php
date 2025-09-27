@@ -20,7 +20,7 @@
                 <div class="nav-container">
                     <nav>
                         <ul>
-                            <li title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
+                            <li id="header-dashboard" title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
                             <li title="My Profile" onclick="getForm('profile')"><i class="bi bi-person-circle"></i> My Profile</li>
                         </ul>
                     </nav>
@@ -47,12 +47,11 @@
                 </div>
             </div>
         </div>
-        
     </header>
 
     <div class="side-nav fadeInLeft animated">
         <ul>
-            <li title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
+            <li id="nav-dashboard" title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
             <li title="log-out"><i class="bi bi-power"></i> Log-Out</li>
         </ul>
     </div>
@@ -60,12 +59,15 @@
     <div class="body-div">
         <div class="in-div">
             <div class="body-container" id="main-dashboard">
-                <?php $page="dashboard";?>
-			    <?php include 'config/content-pages.php';?>
+                <script>
+                    getPage('dashboard');
+                </script>
             </div>
         </div>
     </div>
-    <script>sessionValidation();</script>
+    <script>
+        sessionValidation();
+    </script>
 </body>
 
 </html>

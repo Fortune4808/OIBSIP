@@ -74,6 +74,7 @@ header .in-div .container .nav-container nav ul li {
     color: var(--text-color);
     font-size: 13px;
     white-space: nowrap;
+    font-weight: 600;
 }
 
 header .in-div .container .nav-container nav ul li i {
@@ -84,8 +85,13 @@ header .in-div .container .nav-container nav ul li:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     color: var(--primary-color);
-    font-weight: 600;
     cursor: pointer;
+}
+
+header .active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: var(--primary-color) !important;
 }
 
 header .in-div .container .nav-container .right-div {
@@ -222,6 +228,13 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     border-radius: 5px;
     border-left: 2px solid var(--primary-color);
     cursor: pointer;
+}
+
+.side-nav .active {
+    background-color: #F9F7F0;
+    color: var(--secondary-color);
+    border-radius: 5px;
+    border-left: 2px solid var(--primary-color);
 }
 
 
@@ -517,7 +530,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
 }
 
 .profile-card .body-form .div-in .form-container .form select {
-  appearance: none; 
+    appearance: none;
 }
 
 .profile-card .body-form .div-in .form-container .form .text-field:focus {
