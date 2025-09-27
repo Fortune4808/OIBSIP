@@ -8,7 +8,7 @@
                     </div>
                     <div>
                         <div><i class="bi bi-speedometer2"></i> Administrative Dashboard</div>
-                        <div id="fullname">Fortune Tech Global</div>
+                        <span>👋 Hi, <span id="fullname"></span></span>
                     </div>
                 </div>
             </div>
@@ -37,6 +37,7 @@
                 </div>
             </div>
         </div>
+        <script>getAuthProfile();</script>
     </div>
 
     <div class="bottom-div">
@@ -116,6 +117,6 @@
     });
     chart.render();
         document.addEventListener("DOMContentLoaded", function() {
-        renderChart();
+        // renderChart();
     });
 </script>

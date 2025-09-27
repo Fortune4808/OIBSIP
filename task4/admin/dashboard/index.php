@@ -32,8 +32,8 @@
                         </div>
 
                         <div class="profile-header">
-                            <div id="profile-name">Fortune Tech Global</div>
-                            <div id="status-name">Active</div>
+                            <div id="profile-name"></div>
+                            <div id="status-name"></div>
                         </div>
 
                         <div class="profile-pix-header" title="Profile Pix">
@@ -47,6 +47,7 @@
                 </div>
             </div>
         </div>
+        
     </header>
 
     <div class="side-nav fadeInLeft animated">
@@ -64,6 +65,7 @@
             </div>
         </div>
     </div>
+    <script>sessionValidation();</script>
 </body>
 
 </html>

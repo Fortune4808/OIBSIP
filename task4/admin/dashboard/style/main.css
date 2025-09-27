@@ -305,7 +305,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     border-radius: 5px;
 }
 
-.body-div .in-div .body-container .top-div .statistics .div-in .profile #fullname {
+.body-div .in-div .body-container .top-div .statistics .div-in .profile span {
     color: var(--secondary-color);
     font-size: 15px;
     font-weight: 600;

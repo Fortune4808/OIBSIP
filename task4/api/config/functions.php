@@ -46,9 +46,9 @@ function validateAccesskey($conn, $accessKey)
     if ($count > 0) {
         $fetchQuery = mysqli_fetch_array($query);
         $userId = $fetchQuery['userId'];
-        $check = 1;
+        $check = true;
     } else {
-        $check = 0;
+        $check = false;
     }
     return json_encode([
         ["userId" => $userId, "check" => $check]

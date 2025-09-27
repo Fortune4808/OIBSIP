@@ -32,7 +32,7 @@ function resetPassword() {
 
         $.ajax({
             type: "POST",
-            url: endPoint + '/user/auth/reset-password/reset-password',
+            url: `${endPoint}/user/auth/reset-password/reset-password`,
             data: formData,
             cache: false,
             processData: false,
@@ -80,7 +80,7 @@ function getResetpasswordForm({ userId, titleName, firstName, middleName, lastNa
         const $button = $('#finish-reset-pass');
         const $resendOTP = $('#resend-otp');
 
-        if ($titleName.length && $fullName.length && $button.length) {
+        if ($titleName.length && $fullName.length && $emailAddress && $button.length) {
             $titleName.html(titleName);
             const fullName = `${firstName} ${middleName} ${lastName}`
             $fullName.html(fullName);
@@ -128,7 +128,7 @@ function finishResetPassword(userId) {
 
         $.ajax({
             type: "POST",
-            url: endPoint + '/user/auth/reset-password/finish-reset-password',
+            url: `${endPoint}/user/auth/reset-password/finish-reset-password`,
             data: formData,
             cache: false,
             processData: false,
@@ -171,7 +171,7 @@ function resendOTP(userId) {
 
         $.ajax({
             type: "POST",
-            url: endPoint + '/user/auth/reset-password/resend-reset-pass-otp',
+            url: `${endPoint}/user/auth/reset-password/resend-reset-pass-otp`,
             data: formData,
             cache: false,
             processData: false,
@@ -200,4 +200,306 @@ function resendOTP(userId) {
         alert(error);
     }
 }
+
+function fetchTitle() {
+    try {
+        $.ajax({
+            type: "GET",
+            url: `${endPoint}/setup/title`,
+            cache: false,
+            headers: {
+                "apiKey": apiKey
+            },
+            success: function (data) {
+                const { success, data: titles } = data;
+
+                if (success && titles.length > 0) {
+                    let text = "";
+
+                    for (let i = 0; i < titles.length; i++) {
+                        const { titleId, titleName } = titles[i];
+                        text += `<option value="${titleId}">${titleName}</option>`;
+                    }
+
+                    $('#titleId').append(text);
+                }
+            },
+            error: function () {
+                console.log("Request failed");
+            }
+        });
+    } catch (error) {
+        alert(error);
+    }
+}
+
+function newRegistration() {
+    const titleId = $('#titleId').val()
+    const firstName = $('#firstName').val()
+    const middleName = $('#middleName').val()
+    const lastName = $('#lastName').val()
+    const emailAddress = $('#emailAddress').val()
+    const phoneNumber = $('#phoneNumber').val()
+    const homeAddress = $('#homeAddress').val()
+    const password = $('#password').val()
+    const confirmedPassword = $('#confirmedPassword').val()
+
+    if (!titleId) {
+        alert('ERROR! Select Title to Continue');
+        return;
+    }
+    if (!firstName) {
+        alert('ERROR! Enter your First Name to Continue');
+        return;
+    }
+    if (!middleName) {
+        alert('ERROR! Enter your Middle Name to Continue');
+        return;
+    }
+    if (!lastName) {
+        alert('ERROR! Enter your Last Name to Continue');
+        return;
+    }
+    if (!emailAddress) {
+        alert('ERROR! Enter your Email Address to Continue');
+        return;
+    }
+    if (!phoneNumber) {
+        alert('ERROR! Enter your Phone Number to Continue');
+        return;
+    }
+    if (!homeAddress) {
+        alert('ERROR! Enter your Home Address to Continue');
+        return;
+    }
+    if (!password) {
+        alert('ERROR! Enter your Password to Continue');
+        return;
+    }
+    if (!confirmedPassword) {
+        alert('ERROR! Enter Confirmed Password to Continue');
+        return;
+    }
+    if (password != confirmedPassword) {
+        alert('ERROR! Password dont match with confirmed password');
+        return;
+    }
+
+    try {
+
+        const btnText = $('#submit').html();
+        $('#submit').html('<i id="spinner" class="bi bi-arrow-repeat"></i> SUBMITTING...');
+        document.getElementById('submit').disabled = true;
+
+        const formData = new FormData();
+        formData.append("titleId", titleId);
+        formData.append("firstName", firstName);
+        formData.append("middleName", middleName);
+        formData.append("lastName", lastName);
+        formData.append("emailAddress", emailAddress);
+        formData.append("phoneNumber", phoneNumber);
+        formData.append("homeAddress", homeAddress);
+        formData.append("password", password);
+        formData.append("confirmedPassword", confirmedPassword);
+
+        $.ajax({
+            type: "POST",
+            url: `${endPoint}/user/auth/registration/registration`,
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            headers: {
+                "apiKey": apiKey
+            },
+            success: function (data) {
+                const { success, message } = data;
+
+                if (success) {
+                    alert(message);
+                    getRegVerificationForm({ emailAddress });
+                } else {
+                    alert(message);
+                }
+            },
+            error: function (xhr) {
+                alert("Request failed");
+            }
+        })
+            .always(function () {
+                $('#submit').html(btnText);
+                document.getElementById('submit').disabled = false;
+            });
+    } catch (error) {
+        alert(error);
+    }
+}
+
+function getRegVerificationForm({ emailAddress }) {
+    getPage('email-verification-reg');
+    const interval = setInterval(() => {
+        const $emailAddress = $('#email');
+        const $button = $('#finish-reg');
+        const $resendOTP = $('#resend-otp');
+
+        if ($emailAddress.length && $button.length) {
+            $emailAddress.html(emailAddress);
+            $button.off("click").on("click", () => finishRegistration(emailAddress));
+            $resendOTP.off("click").on("click", () => resendRegOTP(emailAddress));
+            clearInterval(interval);
+        }
+    }, 50);
+}
+
+function finishRegistration(emailAddress) {
+    const otp = $('#otp').val()
+
+    if (!otp) {
+        alert('ERROR! Enter OTP to Continue');
+        return;
+    }
+
+    try {
+
+        const btnText = $('#finish-reg').html();
+        $('#finish-reg').html('<i id="spinner" class="bi bi-arrow-repeat"></i> SUBMITTING...');
+        document.getElementById('finish-reg').disabled = true;
+
+        const formData = new FormData();
+        formData.append("emailAddress", emailAddress);
+        formData.append("otp", otp);
+
+        $.ajax({
+            type: "POST",
+            url: `${endPoint}/user/auth/registration/finish-registration`,
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            headers: {
+                "apiKey": apiKey
+            },
+            success: function (data) {
+                const { success, message } = data;
+
+                if (success) {
+                    alert(message);
+                    getPage('log-in');
+                } else {
+                    alert(message);
+                }
+            },
+            error: function (xhr) {
+                alert("Request failed");
+            }
+        })
+            .always(function () {
+                $('#finish-reg').html(btnText);
+                document.getElementById('finish-reg').disabled = false;
+            });
+    } catch (error) {
+        alert(error);
+    }
+}
+
+function resendRegOTP(emailAddress) {
+    try {
+
+        const btnText = $('#resend-otp').html();
+        $('#resend-otp').html('<i id="spinner" class="bi bi-arrow-repeat"></i> RESENDING...');
+        document.getElementById('resend-otp').disabled = true;
+
+        const formData = new FormData();
+        formData.append("emailAddress", emailAddress);
+
+        $.ajax({
+            type: "POST",
+            url: `${endPoint}/user/auth/registration/resend-reg-otp`,
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            headers: {
+                "apiKey": apiKey
+            },
+            success: function (data) {
+                const { success, message } = data;
+
+                if (success) {
+                    alert(message);
+                } else {
+                    alert(message);
+                }
+            },
+            error: function (xhr) {
+                alert("Request failed");
+            }
+        })
+            .always(function () {
+                $('#resend-otp').html(btnText);
+                document.getElementById('resend-otp').disabled = false;
+            });
+    } catch (error) {
+        alert(error);
+    }
+}
+
+function logIn() {
+    const emailAddress = $('#emailAddress').val();
+    const password = $('#password').val();
+
+    if (!emailAddress) {
+        alert('Enter your Email Address to Continue!');
+        return
+    }
+
+    if (!password) {
+        alert('Enter your Password to Continue!');
+        return
+    }
+
+    const btnText = $('#login').html();
+    $('#login').html('<i id="spinner" class="bi bi-arrow-repeat"></i> AUTHENTICATING...');
+    document.getElementById('login').disabled = true;
+
+    const formData = new FormData();
+    formData.append("emailAddress", emailAddress);
+    formData.append("password", password);
+
+    try {
+
+        $.ajax({
+            type: "POST",
+            url: `${endPoint}/user/auth/login`,
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            headers: {
+                "apiKey": apiKey
+            },
+            success: function (data) {
+                const { success, message, accessKey } = data;
+
+                if (success) {
+                    // alert(message);
+                    sessionStorage.setItem("accessKey", accessKey);
+                    location.href = dashboardUrl;
+                } else {
+                    alert(message);
+                }
+            },
+            error: function (xhr) {
+                alert("Request failed");
+            }
+        })
+            .always(function () {
+                $('#login').html(btnText);
+                document.getElementById('login').disabled = false;
+            });
+    } catch (error) {
+        alert(error);
+    }
+}
+
 

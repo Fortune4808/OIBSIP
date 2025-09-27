@@ -18,12 +18,9 @@ $array = json_decode($fetchAccessKey, true);
 $check = $array[0]['check'];
 $loginUserId = $array[0]['userId'];
 
-$response = [
-    'check' => $check
-];
-
-if ($check == 0) {
+if ($check == false) {
     $response = [
+        'check' => $check,
         'response' => 101,
         'success' => false,
         'message' => "ERROR! Invalid AccessToken. Please LogIn Again."
@@ -40,6 +37,7 @@ $result = mysqli_stmt_get_result($fetchProfile);
 $row = mysqli_fetch_assoc($result);
 if ($row) {
     $response = [
+        'check' => $check,
         "success" => true,
         "profile" => formatUsers($row)
     ];
