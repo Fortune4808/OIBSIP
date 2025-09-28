@@ -39,7 +39,8 @@ if ($row) {
     $response = [
         'check' => $check,
         "success" => true,
-        "profile" => formatUsers($row)
+        "profile" => formatUsers($row),
+        "documentStoragePath" => $documentStoragePath
     ];
 }
 

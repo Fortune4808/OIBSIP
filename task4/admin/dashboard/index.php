@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="profile-pix-header" title="Profile Pix">
-                            <img src="../../public/all-images/logo-pix/avatar.jpg" alt="">
+                            <img id="pictureBox1" alt="">
                         </div>
 
                         <div class="mobile-nav">

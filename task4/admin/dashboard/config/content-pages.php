@@ -4,7 +4,7 @@
             <div class="div-in">
                 <div class="profile">
                     <div class="profile-pix" title="Profile Pix">
-                        <img src="../../public/all-images/logo-pix/avatar.jpg" alt="">
+                        <img id="pictureBox2" alt="">
                     </div>
                     <div>
                         <div><i class="bi bi-speedometer2"></i> Administrative Dashboard</div>

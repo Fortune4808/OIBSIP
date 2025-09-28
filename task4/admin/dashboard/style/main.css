@@ -101,7 +101,6 @@ header .in-div .container .nav-container .right-div {
 }
 
 @media all and (max-width: 640px) {
-
     header .in-div .container .nav-container .icons,
     .profile-header,
     .profile-pix-header {
@@ -117,7 +116,7 @@ header .in-div .container .nav-container .right-div .icons .bi {
 header .in-div .container .nav-container .right-div .icons .bi:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -469,6 +468,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     align-items: center;
     gap: 5px;
     padding-top: 20px;
+    overflow: hidden;
 }
 
 .profile-card .body-form .div-in .profile .profile-pix {

@@ -21,7 +21,8 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
 RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
 
-
+#disable manual routing
+Options -Indexes
 
 #Customize expires caching start - adjust the period according to your needs
 <IfModule mod_expires.c>

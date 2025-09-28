@@ -92,6 +92,7 @@ function formatUsers($row)
             "titleId" => $row['titleId'],
             "titleName" => $row['titleName']
         ],
+        "passport" => $row['passport'],
         "lastLogin" => $row['lastLogin'],
         "createdTime" => $row['createdTime']
     ];

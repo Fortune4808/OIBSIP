@@ -157,6 +157,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-wrap: nowrap;
 }
 
 .right-div .body-form .in-div .form-div .action button:hover {
@@ -169,6 +170,7 @@ h2 {
     font-size: 15px;
     color: var(--primary-color);
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .right-div .body-form .in-div .form-div .action .forget-pass:hover {

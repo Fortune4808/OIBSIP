@@ -9,7 +9,6 @@ function getPage(page) {
             $('#main-dashboard').html(response);
             $('.side-nav li').removeClass('active');
             $('#nav-' + page).addClass('active');
-
             $('header li').removeClass('active');
             $('#header-' + page).addClass('active');
         },
@@ -72,6 +71,7 @@ function getAuthProfile() {
                         $('#emailAddress').val(fetchProfile.emailAddress);
                         $('#registrationId').val(fetchProfile.userId);
                         $('#registrationDate').val(fetchProfile.createdTime);
+                        $("#pictureBox1, #pictureBox2").attr('src', `${data.documentStoragePath}/${fetchProfile.passport}`);
                     }
                 } else {
                     logOut();
