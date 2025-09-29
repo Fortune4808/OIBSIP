@@ -1,5 +1,5 @@
 function getPage(page) {
-    $('#main-dashboard').html('<div class="ajax-loader"><br><img src="./all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
+    $('#main-dashboard').html('<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
     const formData = { action: 'get_page', page: page };
     $.ajax({
         url: adminDashboardLocalurl,
@@ -19,7 +19,7 @@ function getPage(page) {
 }
 
 function getForm(page) {
-    $('#overlay').html('<div class="ajax-loader"><br><img src="./all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
+    $('#overlay').html('<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
     const formData = { action: 'get_form', page: page };
     $.ajax({
         url: adminDashboardLocalurl,

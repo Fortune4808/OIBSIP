@@ -73,3 +73,17 @@
         </script>
     </div>
 <?php } ?>
+
+<?php if ($page == 'logout') { ?>
+    <div class="logout-container">
+        <div class="logout zoomIn animated">
+            <div class="image-div"><img src="../../public/all-images/image-pix/warning.gif" alt="warning-image"></div>
+            <div style="font-size:22px; font-weight:700">Are you sure to log-out?</div>
+            <div style="font-weight: 600; font-size:14px">Please, confirm your log-out action</div>
+            <div>
+                <button onclick="logOut();">YES</button>
+                <button class="no-btn" onclick="alertClose();">NO</button>
+            </div>
+        </div>
+    </div>
+<?php } ?>

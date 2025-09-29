@@ -17,7 +17,7 @@
     <div class="right-div">
         <header class="fadeInDown animated">
             <div class="in-div">
-                <a href="<?php echo $websiteUrl; ?>">
+                <a href="">
                     <div class="logo">
                         <img src="../public/all-images/logo-pix/favicon.png" alt="logo" title="Logo">
                     </div>
@@ -29,8 +29,7 @@
 
         <div class="body-form">
             <div class="in-div fadeIn animated" id="main">
-                <?php $page = 'log-in'; ?>
-                <?php include "./config/form.php" ?>
+                <script>getPage('log-in');</script>
             </div>
         </div>
     </div>

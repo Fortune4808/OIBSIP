@@ -1,5 +1,5 @@
 function getPage(page) {
-    $('#main').html('<div class="ajax-loader"><br><img src="./all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
+    $('#main').html('<div class="ajax-loader"><br><img src="../public/all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
     const formData = { action: 'get_form', page: page };
     $.ajax({
         url: adminLocalurl,

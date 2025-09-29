@@ -52,22 +52,19 @@
     <div class="side-nav fadeInLeft animated">
         <ul>
             <li id="nav-dashboard" title="Dashboard" onclick="getPage('dashboard')"><i class="bi bi-speedometer2"></i> Dashboard</li>
-            <li title="log-out"><i class="bi bi-power"></i> Log-Out</li>
+            <li id="nav-users" title="All Users List" onclick="getPage('users')"><i class="bi bi-people-fill"></i> All Users</li>
+            <li title="log-out" onclick="getForm('logout')"><i class="bi bi-power"></i> Log-Out</li>
         </ul>
     </div>
 
     <div class="body-div">
         <div class="in-div">
             <div class="body-container" id="main-dashboard">
-                <script>
-                    getPage('dashboard');
-                </script>
+                <script>getPage('dashboard');</script>
             </div>
         </div>
     </div>
-    <script>
-        sessionValidation();
-    </script>
+    <script>sessionValidation();</script>
 </body>
 
 </html>
