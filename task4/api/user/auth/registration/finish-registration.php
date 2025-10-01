@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
     $no = $array[0]['no'];
     $registrationId = 'REG' . date("Ymdhis") . $no;
 
-    $insertRecord = mysqli_prepare($conn, "INSERT INTO user_tab(userId, titleId, statusId, firstName, middleName, lastName, emailAddress, phoneNumber, homeAddress, password, createdTime) VALUES(?, ?, 1, ?, ?, ?, ?, ?, ?, ?, NOW())");
+    $insertRecord = mysqli_prepare($conn, "INSERT INTO user_tab(userId, titleId, statusId, firstName, middleName, lastName, emailAddress, phoneNumber, homeAddress, passport, password, createdTime) VALUES(?, ?, 1, ?, ?, ?, ?, ?, ?, 'default.jpg', ?, NOW())");
     mysqli_stmt_bind_param($insertRecord, 'sisssssss', $registrationId, $titleId, $firstName, $middleName, $lastName, $emailAddress, $phoneNumber, $homeAddress, $password);
     mysqli_stmt_execute($insertRecord);
 

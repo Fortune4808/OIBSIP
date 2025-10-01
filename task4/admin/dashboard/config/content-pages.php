@@ -84,22 +84,8 @@
     <div class="bottom-div">
         <div class="table-div">
             <div class="title"><i class="bi bi-people-fill"></i> All users</div>
-            <div class="main">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>sn</th>
-                            <th>User Name</th>
-                            <th>Contact</th>
-                            <th>Last Login</th>
-                            <th>Status</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr></tr>
-                    </tbody>
-                </table>
+            <div class="main" id="get-all-users">
+                <script>getAllUsers();</script>
             </div>
         </div>
     </div>

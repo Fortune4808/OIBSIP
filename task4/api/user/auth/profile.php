@@ -40,7 +40,7 @@ if ($row) {
         'check' => $check,
         "success" => true,
         "profile" => formatUsers($row),
-        "documentStoragePath" => $documentStoragePath
+        "documentStoragePath" => $documentStoragePath . 'user-passport'
     ];
 }
 

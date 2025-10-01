@@ -16,7 +16,8 @@ body {
     --secondary-color: #007BFF;
     --text-color: #444;
     --active-color: #016630;
-    --inactive-color: #dc3545;
+    --inactive-bg: #FEE2E2;
+    --inactive-color: #B91C1C;
 }
 
 header {
@@ -100,7 +101,7 @@ header .in-div .container .nav-container .right-div {
     gap: 15px;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 700px) {
 
     header .in-div .container .nav-container .icons,
     .profile-header,
@@ -168,7 +169,7 @@ header .in-div .container .nav-container .right-div .mobile-nav {
     display: none;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 700px) {
     header .in-div .container .nav-container .right-div .mobile-nav {
         display: block;
     }
@@ -191,7 +192,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     justify-content: center;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 700px) {
     .side-nav {
         display: none;
     }
@@ -252,7 +253,7 @@ header .in-div .container .nav-container .right-div .mobile-nav:hover {
     overflow: auto;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 700px) {
     .body-div {
         width: 100%;
         left: 0px;
@@ -467,7 +468,6 @@ table thead {
 
 table thead tr {
     border-bottom: 1px solid #ddd;
-    color: #333;
     text-align: left;
     font-weight: 700;
 }
@@ -477,6 +477,7 @@ table tbody td {
     padding: 12px 16px;
     font-size: 11px;
     line-height: 1.25;
+    color: var(--text-color);
 }
 
 table tbody tr {
@@ -485,6 +486,68 @@ table tbody tr {
 
 table tbody tr:nth-child(even) {
     background-color: #f3f3f3;
+}
+
+.userprofile {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.userprofile .passport {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.userprofile .passport img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.status {
+    color: #ffffff;
+    padding: 4px 8px;
+    font-weight: 700;
+    border-radius: 12px;
+    font-size: 10px;
+}
+
+.activestatus {
+    background-color: var(--active-color);
+}
+
+.inactivestatus {
+    background-color: var(--inactive-bg);
+    color: var(--inactive-color);
+    font-style: italic;
+}
+
+.view {
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.view:hover {
+    background-color: var(--primary-color);
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.paginate-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    color: #ffffff;
+    border-radius: 12px;
 }
 
 

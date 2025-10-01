@@ -1,12 +1,13 @@
 function getPage(page) {
-    $('#main').html('<div class="ajax-loader"><br><img src="../public/all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
+    const container = $('#main');
+    container.html('<div class="ajax-loader"><br><img src="../public/all-images/image-pix/ajax-loader.gif"/></div>').fadeIn(500);
     const formData = { action: 'get_form', page: page };
     $.ajax({
         url: adminLocalurl,
         type: 'POST',
         data: formData,
         success: function (response) {
-            $('#main').html(response);
+            (container).html(response);
         },
         error: function (xhr, status, error) {
             console.error('AJAX Error: ' + status + ' - ' + error);
