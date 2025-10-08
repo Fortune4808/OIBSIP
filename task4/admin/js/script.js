@@ -143,6 +143,7 @@ function finishResetPassword(userId) {
                 if (success) {
                     alert(message);
                     getPage('log-in');
+                    _successModal();
                 } else {
                     alert(message);
                 }
@@ -386,6 +387,7 @@ function finishRegistration(emailAddress) {
                 if (success) {
                     alert(message);
                     getPage('log-in');
+                    _successModal();
                 } else {
                     alert(message);
                 }

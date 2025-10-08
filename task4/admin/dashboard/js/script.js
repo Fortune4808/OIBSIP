@@ -1,6 +1,6 @@
 function getPage(page) {
     const container = $('#main-dashboard');
-    container.html(`<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>`).fadeIn(500);
+    container.html(`<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>`).fadeIn(1000);
     const formData = { action: 'get_page', page: page };
     $.ajax({
         url: adminDashboardLocalurl,
@@ -21,7 +21,7 @@ function getPage(page) {
 
 function getForm(page) {
     const container = $('#overlay');
-    container.html(`<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>`).fadeIn(500);
+    container.html(`<div class="ajax-loader"><br><img src="../../public/all-images/image-pix/ajax-loader.gif"/></div>`).fadeIn(1000);
     const formData = { action: 'get_form', page: page };
     $.ajax({
         url: adminDashboardLocalurl,
@@ -37,7 +37,7 @@ function getForm(page) {
 }
 
 function alertClose() {
-    $('#overlay').html('').fadeOut(200);
+    $('#overlay').html('').fadeOut(1000);
 }
 
 function capitalizeWords(str) {

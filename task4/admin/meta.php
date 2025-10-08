@@ -6,4 +6,5 @@
 <link rel="stylesheet" href="<?php echo $websiteUrl; ?>/public/style/paramount.css">
 <script src="<?php echo $websiteUrl; ?>/public/js/jquery-3.7.1.min.js"></script>
 <script src="<?php echo $websiteUrl; ?>/public/config/config.js" ></script>
+<script src="<?php echo $websiteUrl; ?>/public/js/paramount.js" ></script>
 <script src="<?php echo $websiteUrl; ?>/admin/js/script.js?v=<?php echo $codeVersion; ?>" ></script>

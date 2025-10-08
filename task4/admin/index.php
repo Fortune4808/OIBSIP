@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="modal-overlay" id="modalFrame" style="display: none;"></div>
     <div class="bg fadeIn animated">
         <img src="./all-images//bg/left-bg.jpg" alt="left background">
     </div>
